@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Jqtree</title>
+    <link href="jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="scripts/demos.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxtree.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxexpander.js"></script>
+   <script type="text/javascript">
+       $(document).ready(function () {
+       // Create jqxExpander
+       $('#jqxExpander').jqxExpander({ showArrow: false, toggleMode: 'none', width: '300px', height: '370px'});
+       // Create jqxTree
+       var source = [
+       {
+           icon: "images/i.png", label: "ideonics", expanded: true, items: [
+           { icon: "images/Folder.jpg", label: "Product" },
+           { icon: "images/Folder.jpg", label: "Solution", selected: true }
+           ]
+       }
+       ];
+       $('#jqxTree').jqxTree({ source: source, width: '100%', height: '100%'});
+       $('#jqxTree').jqxTree('selectItem', null);
+       });
+ </script>
+</head>
+<body class="default">
+    <div id='jqxWidget'>
+        <div id='jqxExpander'>
+            <div>
+                Folders
+            </div>
+            <div style="overflow: hidden;">
+                <div style="border: none;" id='jqxTree'>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
