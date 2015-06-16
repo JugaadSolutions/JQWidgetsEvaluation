@@ -15,7 +15,7 @@
    <script type="text/javascript">
        $(document).ready(function () {
        // Create jqxExpander
-       $('#jqxExpander').jqxExpander({ showArrow: false, toggleMode: 'none', width: '300px', height: '370px'});
+       $('#jqxExpander').jqxExpander({ showArrow: false, toggleMode: 'none', width: '400px', height: '350px'});
        // Create jqxTree
        var source = [
        {
@@ -32,8 +32,26 @@
             ]
        }
        ];
-       $('#jqxTree').jqxTree({ theme:'orange',source: source, width: '100%', height: '100%'});
-       $('#jqxTree').jqxTree('selectItem', null);
+       $('#jqxTree').jqxTree({ theme:'orange',source: source, width: '250px'});
+       //$('#jqxTree').jqxTree('selectItem', null);
+       //$("#ContentPanel").html("<div style='margin: 10px;'>" + event.args.element.id + "</div>");
+       $('#Events').jqxPanel({ height: '250px', width: '200px' });
+       $('#Events').css('border', 'none');
+       $('#jqxTree').on('expand', function (event) {
+           var args = event.args;
+           var item = $('#jqxTree').jqxTree('getItem', args.element);
+           $('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">Expanded: ' + item.label + '</div>');
+       });
+       $('#jqxTree').on('collapse', function (event) {
+           var args = event.args;
+           var item = $('#jqxTree').jqxTree('getItem', args.element);
+           $('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">Collapsed: ' + item.label + '</div>');
+       });
+       $('#jqxTree').on('select', function (event) {
+           var args = event.args;
+           var item = $('#jqxTree').jqxTree('getItem', args.element);
+           $('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">Selected: ' + item.label + '</div>');
+       });
        });
  </script>
 </head>
@@ -43,11 +61,22 @@
             <div>
                 Folders
             </div>
-            <div style="overflow: hidden;">
-                <div style="border: none;" id='jqxTree'>
-                </div>
+            <div style="overflow: hidden;float:left;">
+                
+                    <div style="border: none;float:left; margin-left: 60px;" id='jqxTree'>
+                    </div>
+                    <<div style='margin-left: 20px; float:left;'>
+                        <div>
+                            <span>
+                                Events:
+                            </span>
+                            <div id='Events'>
+                            </div>
+                        </div>
+                    </div>
+                
+                   </div>
             </div>
         </div>
-    </div>
 </body>
 </html>
