@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="imgwidget.html" />
+    <Content Include="jQgrid.html" />
+    <Content Include="jQgridScript1.js" />
     <Content Include="jQwidgets.html" />
     <Content Include="jqwidgets\globalization\globalize.culture.cs-CZ.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.de-DE.js" />
