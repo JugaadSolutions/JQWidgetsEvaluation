@@ -17,50 +17,39 @@
     <script type="text/javascript" src="jqwidgets/jqxgrid.grouping.js"></script>
     <script type="text/javascript" src="jqwidgets/jqxgrid.columnsresize.js"></script>
     <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
-   
+
     <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
     <script type="text/javascript" src="jqwidgets/jqxdata.export.js"></script>
-        <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.export.js"></script>
     <script type="text/javascript" src="jqwidgets/jqxgrid.sort.js"></script>
     <script type="text/javascript" src="jqwidgets/jqxpanel.js"></script>
-    <script type="text/html" src="scripts/demos.js"></script>
-    <script type="text/javascript" src="jQgridScript1.js"></script>
+    <script type="text/html" src="scripts/demos.js">
+    </script>
+    <script type="text/javascript" src="JsonScript.js"></script>
 </head>
 <body class='default'>
     <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
-         <div id="jqxgrid"></div>
-        <div id="eventslog" style="display: none; margin-top: 30px;">
-            <div style="float: left;">
-                Event Log:
-                <div style="border: none;" id="events">
-                </div>
+        <div id="jqxgrid"></div>
+              <div style='margin-top: 20px;'>
+            <div style='float: left;'>
+                <input type="button" value="Export to Excel" id='excelExport' />
+                <br /><br />
+                <input type="button" value="Export to XML" id='xmlExport' />
             </div>
-            <div style="float: left;">
-                Paging Details:
-                <div id="paginginfo">
-                </div>
+            <div style='margin-left: 10px; float: left;'>
+                <input type="button" value="Export to CSV" id='csvExport' />
+                <br /><br />
+                <input type="button" value="Export to TSV" id='tsvExport' />
+            </div>
+            <div style='margin-left: 10px; float: left;'>
+                <input type="button" value="Export to HTML" id='htmlExport' />
+                <br /><br />
+                <input type="button" value="Export to JSON" id='jsonExport' />
+            </div>
+            <div style='margin-left: 10px; float: left;'>
+                <input type="button" value="Export to PDF" id='pdfExport' />
             </div>
         </div>
-                  <div style='margin-top: 20px;'>
-                      <div style='float: left;'>
-                   <input type="button" value="Export to Excel" id='excelExport' />
-                    <br /><br />
-                    <input type="button" value="Export to XML" id='xmlExport' />
-                </div>
-                <div style='margin-left: 10px; float: left;'>
-                    <input type="button" value="Export to CSV" id='csvExport' />
-                    <br /><br />
-                    <input type="button" value="Export to TSV" id='tsvExport' />
-                </div>
-                <div style='margin-left: 10px; float: left;'>
-                    <input type="button" value="Export to HTML" id='htmlExport' />
-                    <br /><br />
-                    <input type="button" value="Export to JSON" id='jsonExport' />
-                </div>
-                <div style='margin-left: 10px; float: left;'>
-                    <input type="button" value="Export to PDF" id='pdfExport' />
-                </div>
-            </div>
-         </div>
+    </div>
 </body>
 </html>
