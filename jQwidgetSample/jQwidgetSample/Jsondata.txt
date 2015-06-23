@@ -71,25 +71,28 @@
 "price": "4.0"
 },
 {
-"firstname": "Beate",
-"lastname": "Petersen"
+"firstname": "Avinash",
+"lastname": "Vishwamitra",
+"productname":"Coffee",
+"price": "4.5"
 },
 {
-"firstname": "Michael",
-"lastname":"Vileid"
+"firstname": "Saagar",
+"lastname": "SM",
+"productname":"Tea",
+"price": "5.0"
 },
 {
-"firstname":  "Guylene",
-"lastname":"Saylor"
+"firstname": "Akhil",
+"lastname": "jain",
+"productname":"Green tea",
+"price": "3.5"
 },
 {
-"lastname":"Bjorn"
-
-},
-{
-"lastname":"Nodier"
-
+"firstname": "Sowjanya",
+"lastname": "MN",
+"productname":"kopiko",
+"price": "4.2"
 }
-
 
 ]

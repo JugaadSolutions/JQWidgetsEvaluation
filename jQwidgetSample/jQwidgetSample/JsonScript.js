@@ -1,20 +1,7 @@
 ﻿$(document).ready(function () {
     var url = "Jsondata.txt";
     
-    for (var i = 0; i < 1000; i++) {
-        var row = {};
-        var productindex = Math.floor(Math.random() * productNames.length);
-        var price = parseFloat(priceValues[productindex]);
-        var quantity = 1 + Math.round(Math.random() * 10);
-        row["firstname"] = firstNames[Math.floor(Math.random() * firstNames.length)];
-        row["lastname"] = lastNames[Math.floor(Math.random() * lastNames.length)];
-        row["productname"] = productNames[productindex];
-        row["price"] = price;
-        row["quantity"] = quantity;
-        row["total"] = price * quantity;
-        data[i] = row;
-    }
-    var source =
+       var source =
              {
                  datatype: "json",
                  datafields: [
@@ -38,7 +25,7 @@
     // initialize jqxGrid
     $("#jqxgrid").jqxGrid(
     {
-        width: 850,
+        width: 540,
         source: dataAdapter,                
         altrows: true,
         sortable: true,
@@ -47,10 +34,8 @@
           { text: 'First Name', datafield: 'firstname', width: 130 },
           { text: 'Last Name', datafield: 'lastname', width: 130 },
           { text: 'Product', datafield: 'productname', width: 200 },
-          { text: 'Price', datafield: 'price', width: 70, align: 'right', cellsalign: 'right' },
-          { text: 'Quantity', datafield: 'quantity', cellsalign: 'right', align: 'right', cellsformat: 'c2' },
-          { text: 'Total', datafield: 'total', cellsalign: 'right', align: 'right', cellsformat: 'c3' }
-        ]
+          { text: 'Price', datafield: 'price', width: 80, align: 'right', cellsalign: 'right' },
+         ]
     });
   
      $("#excelExport").jqxButton();
