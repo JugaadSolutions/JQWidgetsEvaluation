@@ -13,14 +13,12 @@
                  url: url
              };
    
-    $("#jqxgrid").bind('bindingcomplete', function () {
-        $("#jqxgrid").jqxGrid('sortby', 'firstname', 'asc');
-    });
-    var dataAdapter = new $.jqx.dataAdapter(source, {
+      var dataAdapter = new $.jqx.dataAdapter(source, {
         downloadComplete: function (data, status, xhr) { },
         loadComplete: function (data) { },
         loadError: function (xhr, status, error) { }
-    });
+      });
+
     var dataAdapter = new $.jqx.dataAdapter(source);
     // initialize jqxGrid
     $("#jqxgrid").jqxGrid(
@@ -37,7 +35,9 @@
           { text: 'Price', datafield: 'price', width: 80, align: 'right', cellsalign: 'right' },
          ]
     });
-  
+    $("#jqxgrid").bind('bindingcomplete', function () {
+        $("#jqxgrid").jqxGrid('sortby', 'firstname', 'asc');
+    });
      $("#excelExport").jqxButton();
     $("#xmlExport").jqxButton();
     $("#csvExport").jqxButton();

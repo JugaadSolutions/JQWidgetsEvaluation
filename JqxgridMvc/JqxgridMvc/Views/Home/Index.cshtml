@@ -1,0 +1,42 @@
+﻿@model IEnumerable<JqxgridMvc.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts {
+    <script type="text/javascript" src="http://jqwidgets.com/jquery-widgets-demo/scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://jqwidgets.com/jquery-widgets-demo/jqwidgets/jqx-all.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.base.css" />
+    <script type="text/javascript">
+    $(document).ready(function () {
+        // prepare the data
+        var source =
+            {
+                datatype: "json",
+                datafields: [
+					 { name: 'BirthDate', type: 'date' },
+					 { name: 'Gender', type: 'string' },
+					 { name: 'JobTitle', type: 'string' },
+					 { name: 'SickLeaveHours', type: 'string' },
+					 { name: 'VacationHours', type: 'string' }
+                ],
+                url: 'Employee/GetEmployees'
+            };
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        // initialize jqxGrid
+        $("#grid").jqxGrid(
+            {
+                width: 600,
+                source: dataAdapter,
+                columns: [
+                    { text: "Birth Date", datafield: "BirthDate", cellsformat: 'd' },
+                    { text: "Gender", datafield: "Gender" },
+                    { text: "Job Title", datafield: "JobTitle" },
+                    { text: "Sick Leave Hours", datafield: "SickLeaveHours" },
+                    { text: "Vacation Hours", datafield: "VacationHours" }
+                ]
+            });
+    });
+    </script>
+}
+<h2>Index</h2>
+<div id="grid"></div>
