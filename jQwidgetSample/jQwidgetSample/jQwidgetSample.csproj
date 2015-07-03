@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ajaxloading.html" />
     <Content Include="AnotherDate.html" />
     <Content Include="BoostrapDate.html" />
     <Content Include="bootsrapdate\bootstrap-combined.min.css" />
@@ -128,6 +129,10 @@
     <Content Include="imgwidget.html" />
     <Content Include="jQgrid.html" />
     <Content Include="jQgridScript1.js" />
+    <Content Include="jQuery-Ajax-Loading-master\jquery.loading.css" />
+    <Content Include="jQuery-Ajax-Loading-master\jquery.loading.js" />
+    <Content Include="jQuery-Ajax-Loading-master\jquery.loading.min.css" />
+    <Content Include="jQuery-Ajax-Loading-master\jquery.loading.min.js" />
     <Content Include="jQwidgets.html" />
     <Content Include="jqwidgets\globalization\globalize.culture.cs-CZ.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.de-DE.js" />

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loading</title>
+    <link href="jQuery-Ajax-Loading-master/jquery.loading.min.css" rel="stylesheet" />
+    <link href="jQuery-Ajax-Loading-master/jquery.loading.css" rel="stylesheet" />
+    <script type="text/javascript" src="jQuery-Ajax-Loading-master/jquery.loading.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="jQuery-Ajax-Loading-master/jquery.loading.js"></script>
+   
+</head>
+<body>
+    <button id="#test">click here</button>
+
+  <script type="text/javascript">
+      $(document).Loading();
+    $("#test").click(function () {
+        var url = document.location.href;
+        $.ajax(url);
+    });
+    
+    </script>
+
+
+</body>
+</html>
