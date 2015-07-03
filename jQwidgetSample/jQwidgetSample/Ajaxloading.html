@@ -4,20 +4,34 @@
     <title>Loading</title>
     <link href="jQuery-Ajax-Loading-master/jquery.loading.min.css" rel="stylesheet" />
     <link href="jQuery-Ajax-Loading-master/jquery.loading.css" rel="stylesheet" />
-    <script type="text/javascript" src="jQuery-Ajax-Loading-master/jquery.loading.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="jQuery-Ajax-Loading-master/jquery.loading.js"></script>
+
+    
+   
+  
    
 </head>
 <body>
-    <button id="#test">click here</button>
+    <button id="test">click here</button>
+    <div id="div1"><h2>content should be displayed here</h2></div>
+
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script src="jQuery-Ajax-Loading-master/jquery.loading.js"></script>
+    
+    
 
   <script type="text/javascript">
-      $(document).Loading();
-    $("#test").click(function () {
-        var url = document.location.href;
-        $.ajax(url);
-    });
+      $(document).ready(function () {
+          $(document).Loading();
+          $("#test").click(function () {
+              $.ajax({
+                  url: "http://www.w3schools.com/jquery/demo_test.txt", success: function (result) {
+                      $("#div1").html(result);
+                  }, error: function (result) {
+                      alert('Error');
+                  }
+              });
+          });
+      })
     
     </script>
 

@@ -2,11 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Datetime</title>
-    <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="bootsrapdate/jquery.min.js"></script>
+
     <script type="text/javascript" src="bootsrapdate/moment.js"></script>
-    <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.min.js"> </script>
-    <script type="text/javascript" src="bootsrapdate/bootstrap-datetimepicker.min.js"></script>
     <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <link href="bootsrapdate/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" />
     <link href="bootsrapdate/bootstrap-datetimepicker.css" type="text/css" rel="stylesheet" />
@@ -37,9 +34,17 @@
             </div>
         </div>
     </div>
+
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+
+
+    <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.min.js"> </script>
+
+    <script type="text/javascript" src="bootsrapdate/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
         $(function () {
         
+            var url = document.location.href;
             $('#datetimepicker6').datetimepicker();
             $('#datetimepicker7').datetimepicker();
          
