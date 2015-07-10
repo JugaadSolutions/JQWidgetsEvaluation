@@ -1,82 +1,50 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
 <head>
-    <title>Jqtree</title>
-    <link href="jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="scripts/demos.js"></script>
-    <link href="jqwidgets/styles/jqx.orange.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
-    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="jqwidgets/jqxpanel.js"></script>
-    <script type="text/javascript" src="jqwidgets/jqxtree.js"></script>
-    <script type="text/javascript" src="jqwidgets/jqxexpander.js"></script>
-   <script type="text/javascript">
-       $(document).ready(function () {
-       // Create jqxExpander
-       $('#jqxExpander').jqxExpander({ showArrow: false, toggleMode: 'none', width: '400px', height: '350px'});
-       // Create jqxTree
-       var source = [
-       {
-           icon: "images/i.png", label: "ideonics", expanded: true, items: [
-           { icon: "images/Folder.jpg", label: "Product" },
-           { icon: "images/Folder.jpg", label: "Solution", selected: true }
-           ]
-       },
-       {
-           icon: "images/i.png", label: "Services", expanded: true, items: [
-            { icon: "images/Folder.jpg", label: "LED display" },
-            { icon: "images/Folder.jpg", label: "security system" },
-            { icon: "images/Folder.jpg", label: "Security alert" },
-            ]
-       }
-       ];
-       $('#jqxTree').jqxTree({ theme:'orange',source: source, width: '250px'});
-       //$('#jqxTree').jqxTree('selectItem', null);
-       //$("#ContentPanel").html("<div style='margin: 10px;'>" + event.args.element.id + "</div>");
-       $('#Events').jqxPanel({ height: '250px', width: '200px' });
-       $('#Events').css('border', 'none');
-       $('#jqxTree').on('expand', function (event) {
-           var args = event.args;
-           var item = $('#jqxTree').jqxTree('getItem', args.element);
-           $('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">Expanded: ' + item.label + '</div>');
-       });
-       $('#jqxTree').on('collapse', function (event) {
-           var args = event.args;
-           var item = $('#jqxTree').jqxTree('getItem', args.element);
-           $('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">Collapsed: ' + item.label + '</div>');
-       });
-       $('#jqxTree').on('select', function (event) {
-           var args = event.args;
-           var item = $('#jqxTree').jqxTree('getItem', args.element);
-           $('#Events').jqxPanel('prepend', '<div style="margin-top: 5px;">Selected: ' + item.label + '</div>');
-       });
-       });
- </script>
+    <title id='Description'>In this demo the jqxTree is built from JSON data.</title>
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../scripts/demos.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxtree.js"></script>
 </head>
-<body class="default">
-    <div id='jqxWidget'>
-        <div id='jqxExpander'>
-            <div>
-                Folders
-            </div>
-            <div style="overflow: hidden;float:left;">
-                
-                    <div style="border: none;float:left; margin-left: 60px;" id='jqxTree'>
-                    </div>
-                    <<div style='margin-left: 20px; float:left;'>
-                        <div>
-                            <span>
-                                Events:
-                            </span>
-                            <div id='Events'>
-                            </div>
-                        </div>
-                    </div>
-                
-                   </div>
-            </div>
+<body>
+    <div id='content'>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var data = [{ "id": "1", "szulo": "0", "label": "first", "value": "1", "icon": "images/i.png" }, { "id": "4", "szulo": "0", "label": "third", "value": "3", "icon": "url-to-icon" }, { "id": "2", "szulo": "0", "label": "second", "value": "2", "icon": "url-to-icon" }];
+
+                // prepare the data
+                var source =
+                {
+                    datatype: "json",
+                    datafields: [
+                        { name: 'id', type: 'number' },
+                        { name: 'szulo', type: 'number' },
+                        { name: 'label', type: 'string' },
+                        { name: 'value', type: 'number' }
+                    ],
+                    id: 'id',
+                    localdata: data
+                };
+
+                // create data adapter.
+                var dataAdapter = new $.jqx.dataAdapter(source);
+                // perform Data Binding.
+                dataAdapter.dataBind();
+                // get the tree items. The first parameter is the item's id. The second parameter is the parent item's id. The 'items' parameter represents
+                // the sub items collection name. Each jqxTree item has a 'label' property, but in the JSON data, we have a 'text' field. The last parameter
+                // specifies the mapping between the 'text' and 'label' fields.
+                var records = dataAdapter.getRecordsHierarchy('id', 'szulo', 'items');
+                $('#jqxWidget').jqxTree({ source: records, width: '300px' });
+            });
+        </script>
+        <div id='jqxWidget'>
         </div>
+    </div>
 </body>
 </html>
