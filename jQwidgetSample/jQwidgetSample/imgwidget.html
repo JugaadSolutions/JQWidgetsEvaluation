@@ -16,7 +16,7 @@
     <div id='content'>
         <script type="text/javascript">
             $(document).ready(function () {
-                var data = [{ "id": "1", "szulo": "0", "label": "first", "value": "1", "icon": "images/i.png" }, { "id": "4", "szulo": "0", "label": "third", "value": "3", "icon": "url-to-icon" }, { "id": "2", "szulo": "0", "label": "second", "value": "2", "icon": "url-to-icon" }];
+                var data = [{ "id": "1", "szulo": "0", "label": "first", "value": "1", "icon": "images/i.png" }, { "id": "4", "szulo": "0", "label": "third", "value": "3", "icon": "images/i.png" }, { "id": "2", "szulo": "0", "label": "second", "value": "2", "icon": "images/Folder.jpg" }];
 
                 // prepare the data
                 var source =
@@ -26,7 +26,9 @@
                         { name: 'id', type: 'number' },
                         { name: 'szulo', type: 'number' },
                         { name: 'label', type: 'string' },
-                        { name: 'value', type: 'number' }
+                        { name: 'value', type: 'number' },
+                        { name: 'icon', type: 'image' }
+                         
                     ],
                     id: 'id',
                     localdata: data
