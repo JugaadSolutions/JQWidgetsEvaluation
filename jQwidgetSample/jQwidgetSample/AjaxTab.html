@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ajaxtab</title>
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.classic.css" type="text/css" />
+    <script type="text/javascript" src="jqwidgets/gettheme.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxtabs.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        var theme = 'classic';
+        var addButton,
+            addButtonWidth = 29,
+            index = 0;
+        // create jqxTabs.
+        $('#jqxTabs').jqxTabs({ height: 200, width: 300, theme: theme, showCloseButtons: true });
+        var index = 0;
+        $('#jqxTabs').bind('tabclick', function (event) {
+            var header,
+                content;
+            if (event.args.item === $('#unorderedList').find('li').length - 1) {
+                //Loading the header and the content of the new tab with AJAX
+                $.ajax({
+                    type: 'get',
+                    url: (index + 1) + '.json',
+                    //On success - adding the new tab with the loaded content
+                    success: function (data) {
+                        data = $.parseJSON(data);
+                        header = data['tab']['header'];
+                        content = data['tab']['content'];
+                        var length = $('#unorderedList').find('li').length;
+                        $('#jqxTabs').jqxTabs('addAt', event.args.item, header, content);
+                        index++;
+                    },
+                    //On error - alerting an error message
+                    error: function () {
+                        alert('Error (probably the file you want to load is missing)!');
+                    }
+                });
+            }
+        });
+    });
+
+    </script>
+
+    
+</head>
+<body>
+    <div id='jqxTabs' style="float: left;">
+        <ul style="margin-left: 30px;" id="unorderedList">
+            <li>Static 1</li>
+            <li>Static 2</li>
+            <li canselect='false' style='padding: 5px; font-style:italic; font-size: 14px; border: none; background: transparent;' hasclosebutton='false'>+</li>
+        </ul>
+        <div>
+            Static 1
+        </div>
+        <div>
+            Static 2
+        </div>
+        <div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Jqxwidget</title>
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../scripts/demos.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxtabs.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcheckbox.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Create jqxTabs.
+            $('#jqxTabs').jqxTabs({ width: '90%', height: 200, position: 'top' });
+            $('#settings div').css('margin-top', '10px');
+            $('#animation').jqxCheckBox({ theme: theme });
+            $('#contentAnimation').jqxCheckBox({ theme: theme });
+            $('#animation').on('change', function (event) {
+                var checked = event.args.checked;
+                $('#jqxTabs').jqxTabs({ selectionTracker: checked });
+            });
+
+            $('#contentAnimation').on('change', function (event) {
+                var checked = event.args.checked;
+                if (checked) {
+                    $('#jqxTabs').jqxTabs({ animationType: 'fade' });
+                }
+                else {
+                    $('#jqxTabs').jqxTabs({ animationType: 'none' });
+                }
+            });
+        });
+        </script>
+</head>
+<body>
+    <div id='jqxWidget' style="width:50%">
+        <div id='jqxTabs'>
+            <ul>
+                <li style="margin-left: 30px;">Home</li>
+                <li>About</li>
+                <li>Goals</li>
+                <li>Clients</li>
+                <li>Contact us</li>
+            </ul>
+            <div>
+            This is about Ideonics    
+               </div>
+            <div>
+               Providing Service for the electronics and Software
+            </div>
+            <div>
+              Providing ideas and solution
+            </div>
+            <div>
+                
+            </div>
+            <div>
+               Ideonics Banglore
+            </div>
+        </div>
+        <div id='settings'>
+            <div id='animation'>
+                Enable Select Animation
+            </div>
+            <div id='contentAnimation'>
+                Enable Content Animation
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

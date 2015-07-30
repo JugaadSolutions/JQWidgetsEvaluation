@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JsTree</title>
+    <script src="bootsrapdate/jquery.min.js"></script>
+    <script src="bootsrapdate/tree.jquery.js"></script>
+    
+    <link href="bootsrapdate/jqtree.css" type="text/css" rel="stylesheet" />
+    <script src="bootsrapdate/jquery.cookie.js"></script>
+   
+
+   
+    <script type="text/javascript">
+        var data = [
+       {
+           label: 'Ideonics', id: 1,
+           children: [
+               { label: 'Product', id: 2,Icon:'images/Folder.jpg' },
+               { label: 'Services', id: 3, Icon: 'images/Folder.jpg' }
+           ]
+       },
+       {
+           label: 'Ideonics', id: 4,
+           children: [
+               { label: 'Software solution', id: 5 }
+           ]
+       }
+        ];
+        $(function () {
+            $('#tree1').tree({
+                data: data,
+                autoOpen: 0,
+                closedIcon: '+'
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="tree1"></div>
+
+    
+
+</body>
+</html>

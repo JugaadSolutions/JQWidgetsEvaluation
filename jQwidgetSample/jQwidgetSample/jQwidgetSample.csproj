@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ajaxloading.html" />
+    <Content Include="AjaxTab.html" />
     <Content Include="AnotherDate.html" />
     <Content Include="BoostrapDate.html" />
     <Content Include="bootsrapdate\bootstrap-combined.min.css" />
@@ -70,11 +71,17 @@
     <Content Include="bootsrapdate\bootstrap-datetimepicker.min.js" />
     <Content Include="bootsrapdate\bootstrap-datetimepicker.pt-BR.js" />
     <Content Include="bootsrapdate\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="bootsrapdate\jqtree.css" />
+    <Content Include="bootsrapdate\jquery.cookie.js" />
     <Content Include="bootsrapdate\jquery.min.js" />
+    <Content Include="bootsrapdate\json2-min.js" />
+    <Content Include="bootsrapdate\jstree.js" />
     <Content Include="bootsrapdate\js\bootstrap-datetimepicker.min.js" />
     <Content Include="bootsrapdate\js\jquery-1.9.1.min.js" />
     <Content Include="bootsrapdate\js\jssor.slider.mini.js" />
     <Content Include="bootsrapdate\moment.js" />
+    <Content Include="bootsrapdate\style.css" />
+    <Content Include="bootsrapdate\tree.jquery.js" />
     <Content Include="bootstrap-3.3.4-dist\css\bootstrap-theme.css" />
     <Content Include="bootstrap-3.3.4-dist\css\bootstrap-theme.min.css" />
     <Content Include="bootstrap-3.3.4-dist\css\bootstrap.css" />
@@ -84,6 +91,7 @@
     <Content Include="bootstrap-3.3.4-dist\js\bootstrap.js" />
     <Content Include="bootstrap-3.3.4-dist\js\bootstrap.min.js" />
     <Content Include="bootstrap-3.3.4-dist\js\npm.js" />
+    <None Include="1.json" />
     <Content Include="Datepicker.html" />
     <Content Include="DateTimePicker\external\jquery\jquery.js" />
     <Content Include="DateTimePicker\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
@@ -139,6 +147,7 @@
     <Content Include="jQuery-Ajax-Loading-master\jquery.loading.min.css" />
     <Content Include="jQuery-Ajax-Loading-master\jquery.loading.min.js" />
     <Content Include="jQwidgets.html" />
+    <Content Include="jqwidgets\gettheme.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.cs-CZ.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.de-DE.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.en-CA.js" />
@@ -531,10 +540,12 @@
     <Content Include="jqwidgets\styles\jqx.ui-sunny.css" />
     <Content Include="jqwidgets\styles\jqx.web.css" />
     <Content Include="jqwidgets\styles\jqx.windowsphone.css" />
+    <Content Include="Jqxwidget.html" />
     <Content Include="jsdata.txt" />
     <Content Include="Jsondata.txt" />
     <Content Include="JsonGrid.html" />
     <Content Include="JsonScript.js" />
+    <Content Include="jstreeExample.html" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\demos.js" />
@@ -577,6 +588,9 @@
     <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="ajax_children.json" />
+    <Content Include="ajax_roots.json" />
+    <Content Include="2.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
