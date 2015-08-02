@@ -61,6 +61,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pages\ajax1.html" />
+    <Content Include="pages\ajax2.html" />
     <Content Include="Ajaxloading.html" />
     <Content Include="AjaxTab.html" />
     <Content Include="AnotherDate.html" />
@@ -136,6 +138,14 @@
     <Content Include="DateTimePicker\smoothness\jquery-ui.css" />
     <Content Include="DateTimePicker\smoothness\jquery-ui.min.css" />
     <Content Include="DateTimePicker\smoothness\theme.css" />
+    <Content Include="development-bundle\jquery-ui.css" />
+    <Content Include="development-bundle\jquery-ui.js" />
+    <Content Include="development-bundle\jquery-ui.min.css" />
+    <Content Include="development-bundle\jquery-ui.min.js" />
+    <Content Include="development-bundle\jquery-ui.structure.css" />
+    <Content Include="development-bundle\jquery-ui.structure.min.css" />
+    <Content Include="development-bundle\jquery-ui.theme.css" />
+    <Content Include="development-bundle\jquery-ui.theme.min.css" />
     <Content Include="images\Folder.jpg" />
     <Content Include="images\i.png" />
     <Content Include="imgwidget.html" />
@@ -146,6 +156,7 @@
     <Content Include="jQuery-Ajax-Loading-master\jquery.loading.js" />
     <Content Include="jQuery-Ajax-Loading-master\jquery.loading.min.css" />
     <Content Include="jQuery-Ajax-Loading-master\jquery.loading.min.js" />
+    <Content Include="JqueryAjaxtab.html" />
     <Content Include="jQwidgets.html" />
     <Content Include="jqwidgets\gettheme.js" />
     <Content Include="jqwidgets\globalization\globalize.culture.cs-CZ.js" />
