@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Waterfall Series</title>
+    <link href="jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="scripts/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxchart.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxchart.waterfall.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var sampleData = [
+                { a: 3, b: 3 },
+                { a: 4, b: 7 },
+                { a: 5, b: 8 },
+                { a: 6, b: 4 },
+                { a: 7, b: 7 },
+                { a: 8, b: 10 },
+                { a: 9, b: 5 }
+                //{ total: true }
+            ];
+            var settings = {
+                title: "Waterfall chartz",
+                description: "Sample Data",
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                titlePadding: { left: 0, top: 0, right: 0, bottom: 10 },
+                source: sampleData,
+                xAxis:
+                {
+                    gridLines: { visible: true },
+                    tickMarks: { visible: true }
+                },
+                valueAxis: {
+                    logarithmicScale: true,
+                    logarithmicScaleBase: 2,
+                    title: { text: 'Value<br>' },
+                    labels:
+                    {
+                        formatSettings: { decimalPlaces: 2 },
+                        horizontalAlignment: 'right'
+                    }
+                },
+                seriesGroups:
+                [
+                    {
+                        type: 'waterfall',
+                        columnsMaxWidth: 50,
+                        series:
+                        [
+                            { dataField: 'a', displayText: 'A' },
+                            { dataField: 'b', displayText: 'B', summary: 'total' }
+                        ]
+                    }
+                ]
+            };
+            $('#chartContainer').jqxChart(settings);
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id='chartContainer' style="width:850px; height:500px">
+    </div>
+</body>
+</html>

@@ -21,7 +21,7 @@ namespace EFDemo.Controllers
             using (EFDemoContext db = new EFDemoContext())
             {
                 var data = db.Courses.ToList();
-                return View();
+                return View(data);
             }
         }
 

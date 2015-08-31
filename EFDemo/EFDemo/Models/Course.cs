@@ -7,6 +7,10 @@ namespace EFDemo.Models
 {
     public class Course
     {
+        public Course()
+        {
+            this.Student = new HashSet<Student>();
+        }
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseType { get; set; }

@@ -7,6 +7,10 @@ namespace EFDemo.Models
 {
     public class Student
     {
+        public Student()
+        {
+
+        }
         public int StudentId { get; set; }
         public string StudentName { get; set; }
         public int StudentProfileId { get; set; }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<EFDemo.Models.Course>
+@{
     ViewBag.Title = "About";
 }
 
@@ -7,3 +8,8 @@
     <h2>@ViewBag.Message</h2>
 </hgroup>
 
+@foreach(var r in Model)
+{
+    <div>@r.CourseName - @r.CourseType</div>
+    
+}
