@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Jqxchartz.html" />
+    <Content Include="KnockGrid.html" />
+    <Content Include="KnockoutCalendar.html" />
+    <Content Include="KnockoutCharts.html" />
+    <Content Include="knockoutCheck.html" />
+    <Content Include="KnockoutdatetimeInput.html" />
+    <Content Include="KnockOutListBox.html" />
     <Content Include="pages\ajax1.html" />
     <Content Include="pages\ajax2.html" />
     <Content Include="Ajaxloading.html" />
