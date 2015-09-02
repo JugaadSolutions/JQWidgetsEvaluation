@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomGrid.html" />
     <Content Include="Jqxchartz.html" />
     <Content Include="KnockGrid.html" />
     <Content Include="KnockoutCalendar.html" />
